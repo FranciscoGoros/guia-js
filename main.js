@@ -35,8 +35,10 @@ btn.addEventListener("click", function () {
 let edadpersona = 12; 
 
 if (edadpersona >= 13) {
+
     console.log("Puede jugar");
 } else {
+    
     console.log("No puede jugar todavía");
 }
 
@@ -45,7 +47,6 @@ if (edadpersona >= 13) {
 let life = 0
 
 var hash = {
-    // confien
     "vida": life
 }
 
@@ -64,7 +65,8 @@ if (hash.vida > 70) {
     }
 
 // Ejercicio 6
-let opcion = 2
+
+let opcion = 4
 
 switch (opcion) {
     case 1:
@@ -85,4 +87,110 @@ switch (opcion) {
 }
 
 // Ejercicio 7
+
+for (let i = 3; i > 0; i--) {
+    console.log(i);
+    switch (i == 1) {
+        case true:
+            console.log("¡Comienza!");;
+        break
+    }
+}
+
+// Ejercicio 8
+
+let puntajeTotal = 0;
+
+for (let ronda = 1; ronda <= 5; ronda++) {
+    puntajeTotal = puntajeTotal + ronda;
+}
+
+console.log(puntajeTotal)
+
+// Ejercicio 9
+
+let inventario = ["Fusil", "Escudo", "Pistola", "Tarjeta"];
+console.log(inventario);
+
+// Ejercicio 10
+
+for (let i = 0; i < inventario.length; i++) {
+    console.log(inventario[i]);
+}
+
+// Ejercicio 11
+
+let mochila = [];
+mochila.push("Linterna");
+mochila.push("Comida");
+mochila.push("Mapa");
+mochila.pop();
+console.log(mochila);
+
+// Ejercicio 12
+
+let inventario2 = ["llave"];
+    switch (inventario2.includes("llave")) {
+        case true:
+            console.log("La puerta se abre");
+        break;
+        case false:
+            console.log("Necesitás una llave");
+        break;
+    }
+
+// Ejercicio 13
+
+function saludarUsuario(nombre) {
+    console.log("¡Hola, " + nombre + "!");
+}
+
+saludarUsuario("Milo");
+
+// Ejercicio 14
+
+function calcularVidaRestante(vida, danio) {
+    return vida - danio;
+}
+
+let resultado = calcularVidaRestante(100, 30);
+console.log(resultado);
+
+// Ejercicio 15
+
+const sumar = (a, b) => {
+    return a + b;
+};
+
+console.log(sumar(10, 5));
+
+// Ejercicio 16
+
+const jugador = {
+ nombre: "Luna",
+ vida: 100,
+ energia: 80,
+ nivel: 1,
+ inventario: ["espada", "poción"]
+};
+
+console.log(jugador.nombre, jugador.vida, jugador.energia, jugador.nivel, jugador.inventario);
+
+// Ejercicio 17
+
+const jugador2 = {
+ nombre: "Kai",
+ nivel: 1,
+ monedas: 0
+};
+
+function subirNivel(jugador2) {
+    jugador2.nivel += 1;
+    jugador2.monedas += 50;
+}
+subirNivel(jugador2);
+
+console.log(jugador2);
+
+// Ejercicio 18
 
