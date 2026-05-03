@@ -52,7 +52,8 @@ var hash = {
 
 if (hash.vida > 70) {
     console.log("Jugador en buen estado")
-} else {
+} 
+else {
     if (hash.vida >= 30 && hash.vida <= 70) {
     console.log("Jugador herido")
     } else {
@@ -194,3 +195,91 @@ console.log(jugador2);
 
 // Ejercicio 18
 
+const personajes3 = [
+ { nombre: "Luna", vida: 100, tipo: "maga", nivel: 3 },
+ { nombre: "Kai", vida: 120, tipo: "guerrero", nivel: 4 },
+ { nombre: "Nina", vida: 90, tipo: "arquera", nivel: 2 }
+];
+
+for (let i = 0; i < personajes3.length; i++) {
+    console.log(personajes3[i].nombre, "Es " + personajes3[i].tipo, "Y está en nivel ", personajes3[i].nivel);
+}
+
+// Ejercicio 19
+
+const personajesFuertes = personajes3.filter((personaje) => {
+    return personaje.nivel > 3;
+});
+console.log("Personajes con nivel mayor a 3: ", personajesFuertes);
+
+// Ejercicio 20
+
+const nombres = personajes3.map((personaje) => {
+    return personaje.nombre;
+});
+
+console.log(nombres);
+
+// Ejercicio 21
+
+const personajeEncontrado = personajes3.find((personaje) => {
+    return personaje.nombre === "Kai";
+});
+
+console.log(personajeEncontrado);
+
+// Ejercicio 22
+
+const vidaTotal = personajes3.reduce((acumulador, personaje) => {
+    return acumulador + personaje.vida;
+}, 0);
+
+console.log(vidaTotal);
+
+// Ejercicio 23
+
+const mensaje2 = document.getElementById("mensaje");
+
+mensaje2.textContent = "Bienvenido a la guía de JavaScript";
+mensaje2.style.color = "blue";
+
+// Ejercicio 24
+
+const boton = document.getElementById("btn");
+const mensaje3 = document.getElementById("mensaje");
+
+let puntos = 0;
+
+boton.addEventListener("click", function () {
+    puntos += 10;
+    mensaje3.textContent = "Puntos: " + puntos;
+});
+
+// Ejercicio 25
+
+const input2 = document.getElementById("dato");
+const boton2 = document.getElementById("btn");
+const mensaje4 = document.getElementById("mensaje");
+
+boton2.addEventListener("click", function () {
+    let nombre = input2.value;
+    if (nombre === "") {
+        mensaje4.textContent = "Ingresá un nombre para continuar";
+    }
+    else {
+        mensaje4.textContent = "Bienvenido/a " + nombre + ".";
+    }
+});
+
+// Ejercicio 26
+
+const jugador3 = {
+ nombre: "Luna",
+ puntaje: 1500
+};
+
+localStorage.setItem("jugador3", JSON.stringify(jugador3));
+
+const jugadorRecuperado = JSON.parse(localStorage.getItem("jugador3"));
+
+console.log(jugadorRecuperado);
