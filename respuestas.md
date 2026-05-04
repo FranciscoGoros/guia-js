@@ -14,7 +14,7 @@ Ej:
 
     let y = "Perro";
 
-Let no habilita a este tipo de lógica. Adicionalmente, utilizando este tipo de dato tampoco podremos re-declarar la variable dentro de un mismo bloque. 
+Let no habilita a este tipo de lógica. Adicionalmente, utilizando este tipo de dato tampoco podremos re-declarar la variable dentro de un mismo bloque a menos de que utilicemos la siguiente sintaxis:
 
 Ej: 
 
@@ -24,8 +24,9 @@ Ej:
     {
         let x = 10 // Permitido debido a que el tipo de dato anterior era <var>
         let y = 4 // Denegado debido a que el tipo de dato anterior era <let>
-    }
 
+        y = 4 // Permitido debido a que no estamos volviendo a re-declarar a y con "let" al inicio
+    }
 
 // 
 
@@ -67,7 +68,7 @@ Se utilizaría Let para la declaración de variables generales que no requieran 
 Const sería utilizado para aquellas variables que sepamos con seguridad que no necesitan ser cambiadas de valor o tipo en el sistema a largo plazo. Esto ayuda a guardar espacio en la memoria y evitar cambios que potencialmente podrían perjudicar la integridad o funcionamiento del programa. Es la forma más común de declarar datos.
 
 Var es un tipo de dato que puede ocasionar bugs debido a que su scope es global y no funciona por bloques como lo hace Let y Const. Es
-por eso que 
+por eso que puede ser sobre-escrita en cualquier momento del código erróneamente y se recomienda usar cualquiera de los ejemplos anteriores antes que este para evitar problemas.
 
 
 
