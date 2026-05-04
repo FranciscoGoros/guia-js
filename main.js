@@ -20,9 +20,8 @@ console.log("El puntaje final es: " + puntajefinal);
 
 // Ejercicio 3
 
-const input = document.getElementById("dato");
-const btn = document.getElementById("btn");
-const mensaje = document.getElementById("mensaje");
+// Este ejercicio está sobre-escrito por el 25. Como la consigna decía
+// "Utilizar la constant btn" usé el mismo botón para ambos. 
 
 btn.addEventListener("click", function () {
  let valor = input.value;
@@ -56,10 +55,12 @@ if (hash.vida > 70) {
 else {
     if (hash.vida >= 30 && hash.vida <= 70) {
     console.log("Jugador herido")
-    } else {
+    } 
+    else {
         if (hash.vida < 29 && hash.vida > 1) {
             console.log("Jugador en mal estado")
-        } else {
+        } 
+        else {
             console.log("Game Over")
             }
         }
@@ -110,28 +111,29 @@ console.log(puntajeTotal)
 
 // Ejercicio 9
 
-let inventario = ["Fusil", "Escudo", "Pistola", "Tarjeta"];
-console.log(inventario);
+console.log(inventarioBase);
 
 // Ejercicio 10
 
-for (let i = 0; i < inventario.length; i++) {
-    console.log(inventario[i]);
+for (let i = 0; i < inventarioBase.length; i++) {
+    console.log(inventarioBase[i]);
 }
 
 // Ejercicio 11
 
 let mochila = [];
-mochila.push("Linterna");
-mochila.push("Comida");
-mochila.push("Mapa");
-mochila.pop();
-console.log(mochila);
+{
+    mochila.push("Linterna");
+    mochila.push("Comida");
+    mochila.push("Mapa");
+    mochila.pop();
+    console.log(mochila);
+}
+
 
 // Ejercicio 12
 
-let inventario2 = ["llave"];
-    switch (inventario2.includes("llave")) {
+switch (inventarioBase.includes("llave")) {
         case true:
             console.log("La puerta se abre");
         break;
@@ -167,23 +169,9 @@ console.log(sumar(10, 5));
 
 // Ejercicio 16
 
-const jugador = {
- nombre: "Luna",
- vida: 100,
- energia: 80,
- nivel: 1,
- inventario: ["espada", "poción"]
-};
-
 console.log(jugador.nombre, jugador.vida, jugador.energia, jugador.nivel, jugador.inventario);
 
 // Ejercicio 17
-
-const jugador2 = {
- nombre: "Kai",
- nivel: 1,
- monedas: 0
-};
 
 function subirNivel(jugador2) {
     jugador2.nivel += 1;
@@ -195,26 +183,20 @@ console.log(jugador2);
 
 // Ejercicio 18
 
-const personajes3 = [
- { nombre: "Luna", vida: 100, tipo: "maga", nivel: 3 },
- { nombre: "Kai", vida: 120, tipo: "guerrero", nivel: 4 },
- { nombre: "Nina", vida: 90, tipo: "arquera", nivel: 2 }
-];
-
-for (let i = 0; i < personajes3.length; i++) {
-    console.log(personajes3[i].nombre, "Es " + personajes3[i].tipo, "Y está en nivel ", personajes3[i].nivel);
+for (let i = 0; i < personajes.length; i++) {
+    console.log(personajes[i].nombre, "Es " + personajes[i].tipo, "Y está en nivel ", personajes[i].nivel);
 }
 
 // Ejercicio 19
 
-const personajesFuertes = personajes3.filter((personaje) => {
+const personajesFuertes = personajes.filter((personaje) => {
     return personaje.nivel > 3;
 });
 console.log("Personajes con nivel mayor a 3: ", personajesFuertes);
 
 // Ejercicio 20
 
-const nombres = personajes3.map((personaje) => {
+const nombres = personajes.map((personaje) => {
     return personaje.nombre;
 });
 
@@ -222,7 +204,7 @@ console.log(nombres);
 
 // Ejercicio 21
 
-const personajeEncontrado = personajes3.find((personaje) => {
+const personajeEncontrado = personajes.find((personaje) => {
     return personaje.nombre === "Kai";
 });
 
@@ -230,7 +212,7 @@ console.log(personajeEncontrado);
 
 // Ejercicio 22
 
-const vidaTotal = personajes3.reduce((acumulador, personaje) => {
+const vidaTotal = personajes.reduce((acumulador, personaje) => {
     return acumulador + personaje.vida;
 }, 0);
 
@@ -238,33 +220,24 @@ console.log(vidaTotal);
 
 // Ejercicio 23
 
-const mensaje2 = document.getElementById("mensaje");
-
-mensaje2.textContent = "Bienvenido a la guía de JavaScript";
-mensaje2.style.color = "blue";
+mensaje.textContent = "Bienvenido a la guía de JavaScript";
+mensaje.style.color = "blue";
 
 // Ejercicio 24
 
-const boton = document.getElementById("btn");
-const mensaje3 = document.getElementById("mensaje");
-
 let puntos = 0;
 
-boton.addEventListener("click", function () {
+btn.addEventListener("click", function () {
     puntos += 10;
-    mensaje3.textContent = "Puntos: " + puntos;
+    mensaje.textContent = "Puntos: " + puntos;
 });
 
 // Ejercicio 25
 
-const input2 = document.getElementById("dato");
-const boton2 = document.getElementById("btn");
-const mensaje4 = document.getElementById("mensaje");
-
-boton2.addEventListener("click", function () {
-    let nombre = input2.value;
+btn.addEventListener("click", function () {
+    let nombre = input.value;
     if (nombre === "") {
-        mensaje4.textContent = "Ingresá un nombre para continuar";
+        mensaje.textContent = "Ingresá un nombre para continuar";
     }
     else {
         mensaje4.textContent = "Bienvenido/a " + nombre + ".";
@@ -273,13 +246,8 @@ boton2.addEventListener("click", function () {
 
 // Ejercicio 26
 
-const jugador3 = {
- nombre: "Luna",
- puntaje: 1500
-};
+localStorage.setItem("jugador", JSON.stringify(jugador3));
 
-localStorage.setItem("jugador3", JSON.stringify(jugador3));
-
-const jugadorRecuperado = JSON.parse(localStorage.getItem("jugador3"));
+const jugadorRecuperado = JSON.parse(localStorage.getItem("jugador"));
 
 console.log(jugadorRecuperado);
