@@ -51,7 +51,7 @@ Ej:
 En Javascript, var está hoisteada. Esto significa que se inicializa de forma estándar al inicio del código y cualquier cambio posterior en el código edita a este directamente.
 
 //
-Const es utilizado para definir aquellos tipos de datos que no requieran volver a cambiar su valor. Como su nomnbre lo dice, es "constante". 
+Const es utilizado para definir aquellos tipos de datos que no requieran volver a cambiar su valor. Como su nombre lo dice, es "constante". 
 
 
 Ej:
